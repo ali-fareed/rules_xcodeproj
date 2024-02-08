@@ -120,6 +120,8 @@ private let skipCCArgs: [Substring: Int] = [
     "-mmacosx-version-min": 1,
     "-mtvos-simulator-version-min": 1,
     "-mtvos-version-min": 1,
+    "-mxros-simulator-version-min": 1,
+    "-mxros-version-min": 1,
     "-mwatchos-simulator-version-min": 1,
     "-mwatchos-version-min": 1,
     "-target": 2,
