@@ -35,6 +35,12 @@ platforms:
   @@apple_support~1.11.1//platforms:tvos_arm64
     --cpu=tvos_arm64
 
+  @@apple_support~1.11.1//platforms:visionos_sim_arm64
+    --cpu=visionos_sim_arm64
+
+  @@apple_support~1.11.1//platforms:visionos_arm64
+    --cpu=visionos_arm64
+
   @@apple_support~1.11.1//platforms:watchos_x86_64
     --cpu=watchos_x86_64
 
@@ -91,6 +97,14 @@ flags:
   --cpu=tvos_arm64
   --apple_platform_type=tvos
     @@apple_support~1.11.1//platforms:tvos_arm64
+
+  --cpu=visionos_sim_arm64
+  --apple_platform_type=visionos
+    @@apple_support~1.11.1//platforms:visionos_sim_arm64
+
+  --cpu=visionos_arm64
+  --apple_platform_type=visionos
+    @@apple_support~1.11.1//platforms:visionos_arm64
 
   --cpu=watchos_x86_64
   --apple_platform_type=watchos

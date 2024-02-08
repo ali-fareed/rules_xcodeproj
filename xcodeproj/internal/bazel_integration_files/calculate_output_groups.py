@@ -13,12 +13,14 @@ import traceback
 _DEVICE_PLATFORMS = {
     "iphoneos": None,
     "appletvos": None,
+    "xros": None,
     "watchos": None,
     "macosx": None,
 }
 _SIMULATOR_PLATFORMS = {
     "iphonesimulator": None,
     "appletvsimulator": None,
+    "xrsimulator": None,
     "watchsimulator": None,
     "macosx": None,
 }

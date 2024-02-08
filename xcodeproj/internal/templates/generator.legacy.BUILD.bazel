@@ -38,6 +38,8 @@ xcodeproj(
     top_level_simulator_targets = %top_level_simulator_targets%,
     tvos_device_cpus = "%tvos_device_cpus%",
     tvos_simulator_cpus = "%tvos_simulator_cpus%",
+    visionos_device_cpus = "%visionos_device_cpus%",
+    visionos_simulator_cpus = "%visionos_simulator_cpus%",
     unowned_extra_files = %unowned_extra_files%,
     visibility = ["%visibility%"],
     watchos_device_cpus = "%watchos_device_cpus%",

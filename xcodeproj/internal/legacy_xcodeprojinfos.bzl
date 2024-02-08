@@ -47,6 +47,7 @@ _BUILD_TEST_RULES = {
     "ios_build_test": None,
     "macos_build_test": None,
     "tvos_build_test": None,
+    "visionos_build_test": None,
     "watchos_build_test": None,
 }
 

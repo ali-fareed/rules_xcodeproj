@@ -7,6 +7,8 @@ XCODEPROJ_TRANSITION_ATTRS = {
     "ios_simulator_cpus": attr.string(mandatory = True),
     "tvos_device_cpus": attr.string(mandatory = True),
     "tvos_simulator_cpus": attr.string(mandatory = True),
+    "visionos_device_cpus": attr.string(mandatory = True),
+    "visionos_simulator_cpus": attr.string(mandatory = True),
     "watchos_device_cpus": attr.string(mandatory = True),
     "watchos_simulator_cpus": attr.string(mandatory = True),
 }
@@ -18,6 +20,7 @@ _BASE_TRANSITION_INPUTS = [
 _BASE_TRANSITION_OUTPUTS = [
     "//command_line_option:ios_multi_cpus",
     "//command_line_option:tvos_cpus",
+    "//command_line_option:visionos_cpus",
     "//command_line_option:watchos_cpus",
 ]
 
@@ -34,6 +37,7 @@ def make_xcodeproj_target_transitions(
         base_outputs = {
             "//command_line_option:ios_multi_cpus": attr.ios_device_cpus,
             "//command_line_option:tvos_cpus": attr.tvos_device_cpus,
+            "//command_line_option:visionos_cpus": attr.visionos_device_cpus,
             "//command_line_option:watchos_cpus": attr.watchos_device_cpus,
         }
 
@@ -61,6 +65,13 @@ def make_xcodeproj_target_transitions(
                 tvos_cpus = "sim_arm64"
             else:
                 tvos_cpus = "x86_64"
+        
+        visionos_cpus = attr.visionos_simulator_cpus
+        if not visionos_cpus:
+            if cpu_value == "darwin_arm64":
+                visionos_cpus = "sim_arm64"
+            else:
+                visionos_cpus = "arm64"
 
         watchos_cpus = attr.watchos_simulator_cpus
         if not watchos_cpus:
@@ -73,6 +84,7 @@ def make_xcodeproj_target_transitions(
         base_outputs = {
             "//command_line_option:ios_multi_cpus": ios_cpus,
             "//command_line_option:tvos_cpus": tvos_cpus,
+            "//command_line_option:visionos_cpus": visionos_cpus,
             "//command_line_option:watchos_cpus": watchos_cpus,
         }
 
